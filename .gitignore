@@ -1,3 +1,31 @@
+# macOS
+.DS_Store
+
+# VS Code settings (optional to ignore)
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Conda / virtual environment folders
+env/
+venv/
+.venv/
+
+# Raw large datasets (over 100MB)
 data/FineFoodReviews.csv
 data/*_raw.csv
 data/*_large.csv
+
+# Optional: ignore OneDrive sync noise
+*.tmp
+~$*
+
+# Do NOT ignore processed datasets
+# Keep balanced_reviews.csv and all other small files
