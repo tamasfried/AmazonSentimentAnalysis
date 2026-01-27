@@ -23,7 +23,7 @@ data/FineFoodReviews.csv
 data/*_raw.csv
 data/*_large.csv
 
-# Large hugingface model cache
+# Large huggingface model cache
 .hf_cache/
 
 # Optional: ignore OneDrive sync noise
