@@ -26,6 +26,9 @@ data/*_large.csv
 # Large huggingface model cache (Over 100MB)
 .hf_cache/
 
+# Results folder
+results/
+
 # Optional: ignore OneDrive sync noise
 *.tmp
 ~$*
