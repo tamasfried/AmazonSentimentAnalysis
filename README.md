@@ -44,18 +44,19 @@ For practical experimentation, I created a **balanced subset of 120,000 reviews*
 ## Repository Structure
 
 ```
-.
-├── data/
-│   ├── balanced_reviews.csv      # Cleaned & balanced dataset (small enough for GitHub)
-│   └── FineFoodReviews.csv       # Raw dataset (ignored via .gitignore)
-│
-├── notebooks/
-│   └── explore_data.ipynb        # Data exploration, cleaning, balancing
-│
-├── src/                          # Training scripts (to be added)
-│
+AmazonSentimentAnalysis/
 ├── .gitignore
-└── README.md
+├── data/
+│   ├── .DS_Store
+│   └── balanced_reviews.csv
+├── notebooks/
+│   ├── BERT_baseline.ipynb
+│   ├── explore_data.ipynb
+│   └── svm_baseline.ipynb
+├── README.md
+└── testing/
+    ├── distilBERT_testing.py
+    └── svm_testing.py
 ```
 
 ## Notes
