@@ -29,6 +29,9 @@ data/*_large.csv
 # Results folder
 results/
 
+# Trained models
+models/
+
 # Optional: ignore OneDrive sync noise
 *.tmp
 ~$*
