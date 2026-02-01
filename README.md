@@ -46,17 +46,33 @@ For practical experimentation, I created a **balanced subset of 120,000 reviews*
 ```
 AmazonSentimentAnalysis/
 ├── .gitignore
-├── data/
-│   ├── .DS_Store
-│   └── balanced_reviews.csv
-├── notebooks/
-│   ├── BERT_baseline.ipynb
-│   ├── explore_data.ipynb
-│   └── svm_baseline.ipynb
 ├── README.md
-└── testing/
-    ├── distilBERT_testing.py
-    └── svm_testing.py
+│
+├── data/
+│   └── balanced_reviews.csv
+│
+├── notebooks/
+│   ├── explore_data.ipynb
+│   ├── svm_baseline.ipynb
+│   └── BERT_baseline.ipynb
+│
+├── models/                  # Stored locally, excluded from version control
+│   ├── svm_baseline/
+│   │   ├── tfidf_vectorizer.joblib
+│   │   └── linear_svm.joblib
+│   └── distilbert_sentiment/
+│       ├── config.json
+│       ├── pytorch_model.bin
+│       └── tokenizer files
+│
+├── testing/
+│   ├── svm_testing.py
+│   └── distilBERT_testing.py
+│
+└── app/                     # Flask deployment artefact (to be implemented)
+    ├── app.py
+    ├── templates/
+    └── static/
 ```
 
 ## Notes
