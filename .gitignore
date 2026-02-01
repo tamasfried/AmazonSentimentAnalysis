@@ -26,11 +26,18 @@ data/*_large.csv
 # Large huggingface model cache (Over 100MB)
 .hf_cache/
 
-# Results folder
+# Results folders
 results/
+
+
+# Web app uploads and downloads
+app/outputs/*
+app/uploads/*
 
 # Trained models
 models/
+model/
+
 
 # Optional: ignore OneDrive sync noise
 *.tmp

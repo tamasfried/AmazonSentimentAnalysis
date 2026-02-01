@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Review Analyser</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Amazon Review Analyser</h1>
+
+    <p>
+        This tool analyses Amazon-style product reviews and predicts sentiment
+        using a fine-tuned DistilBERT model.
+    </p>
+
+    <!-- ===================== -->
+    <!-- Single Review Section -->
+    <!-- ===================== -->
+
+    <h2>Analyse a Single Review</h2>
+
+    <form method="post">
+        <textarea
+            name="review_text"
+            rows="6"
+            placeholder="Type or paste a product review here"
+        >{{ review_text | default('') }}</textarea>
+        <br><br>
+        <button type="submit" name="action" value="single">
+            Analyse Review
+        </button>
+    </form>
+
+    {% if single_result is not none %}
+        <div class="result-box">
+            <p><strong>Sentiment:</strong> {{ single_result }}</p>
+            <p><strong>Confidence:</strong>
+                {{ "%.2f"|format((single_confidence | default(0)) * 100) }}%
+            </p>
+        </div>
+    {% endif %}
+
+    <hr>
+
+    <!-- ================= -->
+    <!-- CSV Upload Section -->
+    <!-- ================= -->
+
+    <h2>Analyse a CSV File</h2>
+
+    <p>
+        If you would rather upload a CSV, ensure there is a column titled
+        <strong>Review</strong>. Each row will be analysed and a new CSV will be
+        returned containing predicted sentiment and confidence scores.
+    </p>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="csv_file" accept=".csv">
+        <br><br>
+        <button type="submit" name="action" value="csv">
+            Analyse CSV
+        </button>
+    </form>
+
+    {% if csv_message %}
+        <p class="csv-message">{{ csv_message }}</p>
+    {% endif %}
+
+    {% if download_url %}
+        <p>
+            <a href="{{ download_url }}">Download analysed CSV</a>
+        </p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
