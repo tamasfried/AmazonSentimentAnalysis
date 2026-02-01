@@ -13,22 +13,33 @@ For practical experimentation, I created a **balanced subset of 120,000 reviews*
 
 ## Current Progress
 
-- Loaded and explored the full dataset  
-- Converted 1–5 star ratings into 3 sentiment classes  
+- Loaded and explored the full Amazon reviews dataset  
+- Converted 1–5 star ratings into 3 sentiment classes (negative, neutral, positive)  
 - Created an even 40k-per-class balanced dataset  
-- Cleaned text (lowercasing, removing newlines and whitespace)  
+- Cleaned text (lowercasing, whitespace and newline handling)  
 - Saved the processed dataset as `balanced_reviews.csv`  
-- Documented all steps in `explore_data.ipynb`  
-- Set up the repository structure and environment for modelling
+- Documented preprocessing and exploration in `explore_data.ipynb`  
+
+- Built a TF-IDF + Linear SVM baseline classifier  
+- Evaluated the SVM model using accuracy and macro F1-score  
+- Saved the trained SVM model and TF-IDF vectoriser as reusable artefacts  
+
+- Fine-tuned a DistilBERT transformer model for sentiment classification  
+- Evaluated DistilBERT on the same held-out test set  
+- Saved the fine-tuned DistilBERT model for reuse  
+
+- Created standalone Python scripts to run predictions using:
+  - the Linear SVM model
+  - the DistilBERT model 
 
 ## Next Steps
 
-- Build a TF-IDF + LinearSVC baseline classifier  
-- Develop deep-learning models (LSTM, CNN‑LSTM)  
-- Fine‑tune transformer models (BERT, DistilBERT)  
-- Evaluate all models using accuracy, precision, recall and F1‑score  
-- Create a simple Python artefact for running predictions on new text  
-- Prepare results and discussion for the dissertation
+- Create a dedicated analysis notebook to compare SVM and DistilBERT performance  
+- Add confusion matrices and per-class performance analysis  
+- Decide whether to include an LSTM-based deep learning model for comparison  
+- Build a simple Flask web application using one trained model as the deployment artefact  
+- Evaluate and justify model selection for deployment  
+- Prepare results, analysis, and discussion sections for the dissertation
 
 ## Repository Structure
 
